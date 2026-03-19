@@ -3,6 +3,8 @@ package com.cnl.habit_tracker.controller;
 import com.cnl.habit_tracker.models.Habit;
 import com.cnl.habit_tracker.service.HabitService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,8 +22,8 @@ public class HabitController {
     }
 
     @GetMapping()
-    public Habit getHabit(@PathVariable int habitId) {
-        return service.getHabit(habitId);
+    public ResponseEntity<Habit> getHabit(@PathVariable int habitId) {
+        return new ResponseEntity<>(service.getHabit(habitId),HttpStatus.OK );
     }
 
     @GetMapping()
