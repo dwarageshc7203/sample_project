@@ -1,4 +1,7 @@
 package com.cnl.habit_tracker.repository;
 
-public interface HabitRepo {
+import com.cnl.habit_tracker.models.Habit;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface HabitRepo extends JpaRepository<Habit, Integer> {
 }
