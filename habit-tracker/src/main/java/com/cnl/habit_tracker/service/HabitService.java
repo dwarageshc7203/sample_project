@@ -1,6 +1,6 @@
 package com.cnl.habit_tracker.service;
 
-import com.cnl.habit_tracker.models.Habit;
+import com.cnl.habit_tracker.model.Habit;
 import com.cnl.habit_tracker.repository.HabitRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

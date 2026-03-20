@@ -1,18 +1,20 @@
-package com.cnl.habit_tracker.models;
+package com.cnl.habit_tracker.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
-import org.springframework.stereotype.Component;
 
 @Data
 @Entity
-@Component
 public class Habit {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int habitId;
     private String habitName;
     private String type;
+    private Boolean status;
 
 }
