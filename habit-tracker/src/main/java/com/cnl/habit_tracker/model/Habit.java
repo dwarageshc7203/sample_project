@@ -1,10 +1,9 @@
 package com.cnl.habit_tracker.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -14,7 +13,10 @@ public class Habit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int habitId;
     private String habitName;
-    private String type;
-    private Boolean status;
+    private String description;
+    private Boolean isActive;
+
+    @OneToMany(mappedBy = "habit", cascade = CascadeType.ALL)
+    private List<HabitLog> habitLogs;
 
 }
